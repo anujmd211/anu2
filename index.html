@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html>
+    <style>
+        .fa-spot{
+    top:356px;
+    width:600px;
+    height:1000px;
+    font-family: Helvetica;
+    font-size: 14px;
+    color: #1E1E1E;
+    letter-spacing: 0px;
+    line-height: 20px;
+    }
+   .fa-spot ol{
+     padding: 25px;
+    margin: 0px;
+    }
+   .fa-spot li{
+     padding-right: 25px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    }
+    .fa-spot .access-means{
+    width:598px;
+    font-family: Helvetica;
+    font-size: 12px;
+    color: #767676;
+    letter-spacing: 0px;
+    line-height: 14px;
+    }
+    .fa-spot .horizon-line{
+    border: 1px solid #D1CCCC;
+    color:#D1CCCC;
+    margin-top: 35px;
+    }
+    .font-bold{
+      font-weight:bold;
+    }
+    .fa-spot .name-dob-label{
+     margin-top:25px;
+     margin-bottom:10px;    
+    }
+    .fa-spot .user-profile-container{
+     border: 1px solid #D1CCCC;
+    }
+    .profile-1
+    {
+     width:13%;
+     display:inline-block;
+     border-right: 1px solid #D1CCCC;"
+    }
+    .profile-2{
+     width:85%;
+     display:inline-block
+    }
+    .profile-1>div, .profile-2>div{
+      margin:15px
+    }
+    .user-profile-container .check-box{
+    margin: 17px;    
+    height: 25px;
+    width: 25px;
+    margin-left: 22px;
+    background:url('checkbox.jpg');
+    }
+    .user-profile-container .active-checkbox{
+     background:url('checkmark.jpg');
+    }
+    .user-profile-container .check-box-container{
+     height: 60px;
+     vertical-align: middle;
+    }
+	
+ a.button {
+		    border: 2px solid #cc0000;
+   		    font-size: 16px;
+   		    font-weight: 700;
+  		    color: #fff;
+   		    display: inline-block;
+   		    line-height: 36px;
+   		    text-align: center;
+   	   	    background-color: #cc0000;
+   		    margin: 6px 6px 0 0;
+   		    min-width: 115px;
+   		    padding: 2px 6px 3px;
+   		    text-decoration: none;
+   		    cursor: pointer;
+    		    background-image: none;
+    		    height: auto;
+		}
+		
+		 b.button {
+		   
+   		    font-size: 16px;
+   		    font-weight: 700;
+  		    color: #cc0000;
+   		    display: inline-block;
+   		    line-height: 36px;
+   		    text-align: center;
+   	   	   
+   		    margin: 6px 6px 0 0;
+   		    min-width: 115px;
+   		    padding: 2px 6px 3px;
+   		    text-decoration: none;
+   		    cursor: pointer;
+    		    background-image: none;
+    		    height: auto;
+		}
+    </style>
+<head> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+     $(document).ready(function(){
+	 var isChkboxClicked=false;
+
+	 
+        
+     
+		
+    $('.user-profile-container').find('.check-box').click(function(){
+	console.log('Anurag : ' +this.className)
+			 if(this.className == 'check-box active-checkbox'){
+	 isChkboxClicked = true;
+	 }
+            if(!isChkboxClicked){  
+				
+				
+                $(this).addClass("active-checkbox");
+				selectAll(this.id,true);
+            }
+            else {  
+
+		
+                $(this).removeClass("active-checkbox");
+				selectAll(this.id,false);
+			
+            }
+        isChkboxClicked=!isChkboxClicked;
+        })
+        })
+    </script> 
+	
+	<script language="JavaScript">
+function selectAll(idx,isTrue)
+{
+	console.log('idx: ' +idx+ ' isTrue: ' +isTrue);	
+	var chkStatus = isTrue;
+	
+		var viewOrder = document.getElementById('view-order-details'+idx);
+		var orderRefills = document.getElementById('order-refills-details' + idx);
+		var viewHistory = document.getElementById('view-history-details' + idx);
+		var fastStart = document.getElementById('allow-Fast-Start' + idx);
+		var sensitiveMeds = document.getElementById('view-Sensitive-Medications-Allowed' + idx);
+		var viewPAStatus = document.getElementById('view-PA-Status' + idx);
+		var requestMyCoverageException = document.getElementById('request-my-coverage-exception' + idx);
+	if(chkStatus) {	
+		(viewOrder == null)? "" :viewOrder.checked=true;
+		(orderRefills == null)? "" :orderRefills.checked=true;	
+		(viewHistory == null)? "" :viewHistory.checked=true;
+		(fastStart == null)? "" :fastStart.checked=true;
+		(sensitiveMeds == null)? "" :sensitiveMeds.checked=true;
+		(viewPAStatus == null)? "" :viewPAStatus.checked=true;
+		(requestMyCoverageException == null)? "" :requestMyCoverageException.checked=true;
+	}
+	else if(!chkStatus) {
+		(viewOrder == null)? "" :viewOrder.checked=false;
+		(orderRefills == null)? "" :orderRefills.checked=false;	
+		(viewHistory == null)? "" :viewHistory.checked=false;
+		(fastStart == null)? "" :fastStart.checked=false;
+		(sensitiveMeds == null)? "" :sensitiveMeds.checked=false;
+		(viewPAStatus == null)? "" :viewPAStatus.checked=false;
+		(requestMyCoverageException == null)? "" :requestMyCoverageException.checked=false;
+	}
+}
+</script>
+</head>
+<style>
+
+    </style>
+<body>
+<div class="fa-spot" style="">
+  <div class="fa-contentspot1">    
+           We've made some changes to the way family access works. Family access now allows someone to view, order, request and transfer prescriptions (including sensitive medications). If you have access to a family member’s prescriptions, you may have more or less access than you had before. If a family member has access to your prescriptions, he or she may have more or less access than before.
+        <br/>
+        <br/>
+        You can give adult family members covered under your prescription benefit plan permission to access* your prescription information, including the ability to order refills for you and checking your order status. Here's how:
+</div>
+<div class="fa-contentspot2">
+ <ol type="1">
+     <li>
+    Check the box next to a family member who you'd like to be able to access your prescription information and click "Save."
+     </li> 
+     <li>
+    Ask the family member to register separately on Caremark.com with a unique username and password. After registering, they'll be able to access your information. 
+     </li> 
+     <li>
+    The family member will also be able to give you access to their prescription information by checking the box next to your name.
+     </li> 
+     <li>
+    You can change or remove access at any time by unchecking the boxes and clicking "Save.“
+     </li> 
+</ol>
+</div>
+    <div class="fa-contentspot3 access-means">
+    <span>
+    * What access means
+        </br>
+By granting access to another family member, I authorize that family member to manage my prescriptions, which includes, but is not limited to, submitting prescriptions to be filled, picking up prescriptions, viewing my prescription records and medical profile, discussing my care with Caremark or CVS pharmacists, accessing financial information related to my prescriptions, providing guidance and direction to Caremark or CVS pharmacy in connection with my prescriptions, and/or undertaking any activity that I personally could undertake to manage my prescriptions. The family member may manage my prescriptions in person at CVS pharmacy, telephonically, on Caremark.com, using the Caremark mobile application, or through any other channel that Caremark or CVS Pharmacy makes available. This consent is valid until revoked on Caremark.com, or by telephonically calling Customer Care at [CCR #].
+    </span>
+    </div>
+    <div class="horizon-line"></div>
+    
+    <div>
+        <div class="name-dob-label font-bold">
+        John Smith - 05/01/1973
+        </div>        
+        <div class="font-bold user-profile-container">
+            <div class="profile-1">
+                <div>Select</div>
+            </div>
+            <div  class="profile-2">
+                <div>Let this family member</div>
+            </div>
+        </div>
+    </div>
+        <div>      
+        <div class="user-profile-container" style="margin-top:-1px">
+            <div id =  "3" class="profile-1 check-box-container">
+                <div id =  "1" class="check-box"></div>
+            </div>
+            <div  class="profile-2">
+                <div>Access my prescriptions</div>
+            </div>
+        </div>
+    </div> 
+
+
+    
+         <div>
+        <div class="name-dob-label font-bold">
+        Anurag Srivastava- 06/01/1983
+        </div>        
+        <div class="font-bold user-profile-container">
+            <div class="profile-1">
+                <div>Select</div>
+            </div>
+            <div  class="profile-2">
+                <div>Let this family member</div>
+            </div>
+        </div>
+    </div>
+        <div>      
+        <div class="user-profile-container" style="margin-top:-1px">
+            <div id =  "4" class="profile-1 check-box-container">
+                <div id =  "2" class="check-box active-checkbox"></div>
+            </div>
+            <div  class="profile-2">
+                <div>Access my prescriptions</div>
+            </div>
+        </div>
+    </div>  
+    
+ </div>
+ <div style="
+    width: 0px;
+    height: 18px;
+">><a class="button" href="javascript:confirmICESubmit('1');" data-di-id="di-id-650de28a-4f420aad" style="
+    margin-right: auto;
+    padding-left: 6px;
+    margin-left: 470px;
+    margin-top: -35px;
+">Save</a>
+
+</div>
+
+ <div><b class="button" href="javascript:confirmICESubmit('1');" data-di-id="di-id-650de28a-4f420aad" style="
+    margin-right: auto;
+    padding-left: 6px;
+    margin-left: 320px;
+    margin-top: -35px;
+">Cancel</b></div>
+ 
+ </body>
+
+</html>
